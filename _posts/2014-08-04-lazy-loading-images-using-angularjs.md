@@ -30,7 +30,7 @@ so scroll/resize listener is fired continuosly until you stop resizing/scrolling
 
 There are multiple ways how to solve this efficiently. Here is one of simplest ones.
 
-In this solution I am using service which acts as registry for listeners and invokes all listeners when scroll/resize
+In this solution I am using service which acts as a registry for listeners and invokes all listeners when scroll/resize
  event is fired. To invoke registered listeners only once we are simulating "scroll/resize stop" event using
  `timeout` so listeners are called when user stops
 scrolling/resizing window.
