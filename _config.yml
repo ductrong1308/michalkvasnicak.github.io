@@ -1,0 +1,33 @@
+# Dependencies
+markdown:         redcarpet
+higlighter:         pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            "Let&#39;s develop"   
+
+sass:
+  sass_dir: _sass
+
+author:
+    age: 23
+    current_location:
+        locality: Humenné
+        country: Slovakia
+    email: michal.kvasnicak@gmail.com
+    gravatar_url: http://www.gravatar.com/avatar/68658db4dfeeed0d209fdba1e3ec8776.png
+    github_url: https://github.com/michalkvasnicak
+    github_username: michalkvasnicak
+    twitter_url: https://twitter.com/michalkvasnicak
+    twitter_username: '@michalkvasnicak'
+    linkedin_url: https://www.linkedin.com/in/michalkvasnicak
+    linkedin_username: michalkvasnicak
+    name: Michal Kvasničák
+
+company:
+    url: http://mink.sk
+    name: Mink
+
+paginate: 5

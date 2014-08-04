@@ -1,0 +1,23 @@
+<footer class="vcard site-footer">
+  <div class="container">
+    <div class="center-block" id="author">
+      <img class="photo" src="http://www.gravatar.com/avatar/68658db4dfeeed0d209fdba1e3ec8776.png" width="40" height="40">
+      <em>I am <strong class="fn">{{ site.author.name }}</strong>, {{ site.author.age }} years old <strong class="title">Co-Founder and Full Stack Developer</strong> (<strong>at <a class="org" href="{{ site.company.url }}">{{ site.company.name }}</a></strong>) from <address class="adr"><span class="locality">{{ site.author.current_location.locality }}</span>, <span class="country-name">{{ site.author.current_location.country }}</span></address>.</em>
+      <a class="email profile-link" href="mailto:{{ site.author.email }}">
+        <span class="icon-mail"></span>
+      </a>
+      <a class="profile-link" href="{{ site.author.linkedin_url }}">
+        <span class="icon-linkedin-circled"></span>
+      </a>
+      <a class="profile-link" href="{{ site.author.twitter_url }}">
+        <span class="icon-twitter-circled"></span>
+      </a>
+      <a class="profile-link" href="{{ site.author.github_url }}">
+        <span class="icon-github-circled"></span>
+      </a>
+      <a href="/atom.xml" class="profile-link">
+        <span class="icon-rss-outline"></span>
+      </a>
+    </div>
+  </div>
+</footer>

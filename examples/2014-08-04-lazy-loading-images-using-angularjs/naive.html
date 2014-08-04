@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="Demo">
+<head>
+  <meta charset='utf-8'> 
+  <title>Lazy loading images using AngularJS (naive)</title>
+
+  <style>
+    .images {
+      margin: 0 auto;
+      width: 800px;
+    }
+
+    img {
+      background: #efefef;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="images">
+    <img image-lazy-src="100x100.gif" width="100" height="100" ng-repeat="p in photos track by $index" />
+  </div>
+
+
+  <script src="../vendor/angular.min.js"></script>
+  <script>
+
+    angular.module('Demo', []).run(
+        function($rootScope) {
+          $rootScope.photos = new Array(100);
+        }
+    );
+
+    angular.module('Demo').directive(
+        'imageLazySrc', function($document, $window) {
+          return {
+            restrict: 'A',
+            link: function($scope, $element, $attributes) {
+
+              function isInView() {
+                // get current viewport position and dimensions, and image position
+                var clientHeight = $document[0].documentElement.clientHeight,
+                    clientWidth = $document[0].documentElement.clientWidth,
+                    imageRect = $element[0].getBoundingClientRect();
+
+                if (
+                    (imageRect.top >= 0 && imageRect.bottom <= clientHeight)
+                    &&
+                    (imageRect.left >= 0 && imageRect.right <= clientWidth)
+                ) {
+                  $element[0].src = $attributes.imageLazySrc; // set src attribute on element (it will load image)
+
+                  // unbind event listeners when image src has been set
+                  removeEventListeners();
+                }
+              }
+
+              function removeEventListeners() {
+                $window.removeEventListener('scroll', isInView);
+                $window.removeEventListener('resize', isInView);
+              }
+
+              // bind scroll and resize event listener to window
+              $window.addEventListener('scroll', isInView);
+              $window.addEventListener('resize', isInView);
+
+              // unbind event listeners if element was destroyed
+              // it happens when you change view, etc
+              $element.on('$destroy', function() {
+                removeEventListeners();
+              });
+
+              // explicitly call scroll listener (because, some images are in viewport already and we haven't scrolled yet)
+              isInView();
+            }
+          };
+        }
+    );
+  </script>
+</body>
+</html>
