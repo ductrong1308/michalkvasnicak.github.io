@@ -80,7 +80,7 @@
     );
 
     angular.module('Demo').directive(
-      'imageLazySrc', function ($document, $window, scrollAndResizeListener) {
+      'imageLazySrc', function ($document, scrollAndResizeListener) {
         return {
           restrict: 'A',
           link: function ($scope, $element, $attributes) {
