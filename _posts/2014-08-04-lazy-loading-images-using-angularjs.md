@@ -6,9 +6,9 @@ title: Lazy loading images using AngularJS
 ## The Problem
 
 
-In one of my projects (using AngularJS) I needed some sort of image lazy load because page was heavy on photos.
-However, I didn't want to bother users with loading of images they won't see (because page was optimized for mobile
-devices and primary using 3G connections).
+In one of my projects *(using AngularJS)* I needed some sort of image lazy load because page was heavy on photos.
+However, I didn't want to bother users with loading of images they won't see *(because page was optimized for mobile
+devices and primary using 3G connections)*.
 
 
 ## Naive solution
