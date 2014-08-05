@@ -1,0 +1,42 @@
+<article class="article">
+  <header>
+    {% if page.is_post %}
+    <h1>{{ page.title }}</h1>
+    {% else %}
+    <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+    {% endif %}
+    <time pubdate="pubdate" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+  </header>
+
+  {% if content %}
+  {{ content }}
+  {% else %}
+  {{ page.content }}
+  {% endif %}
+
+  <footer>
+    <em>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"></a><br />This post is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      If you found a typo, please <a href="http://github.com/michalkvasnicak/michalkvasnicak.github.io/edit/master/_posts/{{ page.url | remove_first:'/' | replace_first:'/','-' | replace_first:'/','-' |replace_first:'/','-' | remove:'/' }}.md">fork and edit this post</a>.
+    </em>
+    <div class="buttons">
+      <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true">
+      </div>
+
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="michalkvasnicak">Tweet</a>
+
+      <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+
+
+      <script data-gittip-username="michalkvasnicak"
+              data-gittip-widget="button"
+              src="//gttp.co/v1.js"></script>
+      &#32;
+      <script id='fbnrypv'>
+        (function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=kvasnicak.michal&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbnrypv');
+      </script>
+    </div>
+  </footer>
+</article>

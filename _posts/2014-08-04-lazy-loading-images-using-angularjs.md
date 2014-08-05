@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Lazy loading images using AngularJS
+tags:
+    - angularjs
+    - javascript
 ---
 
 ## The Problem
