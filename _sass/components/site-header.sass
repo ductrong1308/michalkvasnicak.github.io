@@ -1,20 +1,36 @@
 .site-header
   background: $site-header-color-bg
-  padding: 1rem
+  padding: 0.5rem
   text-align: center
   width: 100%
 
   h1
-    font-size: 3rem
-    margin-top: 0.6em
+    font-size: 2.5rem
+    margin-top: 0
+    margin-bottom: 0
 
   a
     color: $site-header-color
 
-  .by
-    font-size: .25em
-    margin-top: 1rem
-    margin-bottom: 1rem
+  .home-link
+    display: block
 
-  .author
-    font-size: .5em
+  .by
+    font-size: .3em
+
+  .author-link
+    font-size: .4em
+
+@media (min-width: 38em)
+  .site-header
+    .home-link, .by, .author-link
+      display: block
+
+    h1
+      font-size: 3rem
+      margin-top: 0.6em
+      margin-bottom: 0.6em
+
+    .by
+      margin-top: 1rem
+      margin-bottom: 1rem
