@@ -5,6 +5,7 @@
     {% for post in site.posts %}
     <url>
         <loc>http://kvasnicak.info{{ post.url | remove: 'index.html' }}</loc>
+        <lastmod>{% if post.lastmod %}{{ post.lastmod | date_to_xmlschema  }}{% else %}{{ post.date | date_to_xmlschema  }}{% endif %}</lastmod>
     </url>
     {% endfor %}
 </urlset>
